@@ -1,13 +1,23 @@
-.menuActive {
-  opacity: 100%;
-  transition: all 1s;
-
-}
-
 .menu {
   display: none;
+  transition: all 1s;
+
 }
 
-.menuActive::before {
+.menuActive {
+  animation: moveRight .5s ease-in-out;
   transition: all 1s;
+}
+
+
+/* Definindo os @keyframes */
+@keyframes moveRight {
+  0% {
+    opacity: 0%;
+  }
+
+  100% {
+    opacity: 100%;
+
+  }
 }
