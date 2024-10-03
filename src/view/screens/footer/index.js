@@ -3,7 +3,7 @@ import { SubText, SubtitleText } from "../../styles/title";
 
 const FooterPage = () => {
     return <>
-        <Box sx={{ padding: "25px 0px 150px 50px" }}>
+        <Box sx={{ paddingBottom: "50px", paddingInline: { lg: "20%", xs: "20px" }, width: "100%", justifyContent: "center", display: "flex", flexDirection: "column", alignItems: "center" }}>
             <Box sx={{ display: "flex", paddingTop: "100px", justifyContent: "center" }}>
                 <Box sx={{ width: "600px", padding: "0px 50px 0px 0px", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center" }}>
                     <Typography variant="h2">MG</Typography>
@@ -12,6 +12,8 @@ const FooterPage = () => {
                     </Box>
                 </Box>
             </Box>
+            <Box height={"50px"}/>
+            <SubText text="© Copyright @mmessiasdev" />
         </Box>
     </>
 }

@@ -8,6 +8,7 @@ import ProjectsPage from "../projects";
 import FooterPage from "../footer";
 import '../../../App.css';
 import { useState } from "react";
+import ContactPage from "../contact";
 
 const HomePage = () => {
     const [navBar, setNavBar] = useState(false); // Responsible for the Menu bar Scroll animation
@@ -27,8 +28,8 @@ const HomePage = () => {
                 <Header />
             </Box>
 
-            <Box sx={{ position: "absolute", height: "100vh", display: "flex", alignItems: "center", justifyContent: "space-between", width: "100%" }}>
-                <Box sx={{ height: "100vh", display: "flex", justifyContent: "center", alignItems: "start", flexDirection: "column", padding: "75px", width: "70%" }}>
+            <Box sx={{ position: "absolute", height: "100vh", display: "flex", alignItems: "center", justifyContent: { lg: "space-between", xs: "start" }, width: "100%", flexDirection: { md: "row", xs: "column" } }}>
+                <Box sx={{ height: { lg: "100vh", xs: "min-height" }, display: "flex", justifyContent: "center", alignItems: "start", flexDirection: "column", padding: { md: "75px", xs: "15px" }, width: { md: "70%", xs: "100%" } }}>
                     <div data-aos="fade-right" data-aos-duration="1000">
                         <DefaultTitle title="Michael Guimarães" subtitle="Técnico de Rede e NOC" />
                     </div>
@@ -49,9 +50,9 @@ const HomePage = () => {
                     </div>
 
                 </Box>
-                <Box sx={{ height: "100vh", width: "30%", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "end" }}>
+                <Box sx={{ height: { lg: "100vh", xs: "min-height" }, width: { lg: "30%", xs: "100%" }, display: "flex", flexDirection: "column", justifyContent: "center", alignItems: { lg: "end", xs: "center" }, paddingBlock: "50px" }}>
                     <div data-aos="fade-left" data-aos-duration="1500" data-aos-delay="1500">
-                        <Box sx={{ width: "200px", height: "100px", borderRadius: "15px 0px 0px 15px", justifyContent: "center", alignItems: "center", display: "flex", boxShadow: "0px 7px 9px 0px rgba(0,0,0,0.75)" }} bgcolor="background.main">
+                        <Box sx={{ width: "200px", height: "100px", borderRadius: { lg: "15px 0px 0px 15px", xs: "5px" }, justifyContent: "center", alignItems: "center", display: "flex", boxShadow: "0px 7px 9px 0px rgba(0,0,0,0.75)" }} bgcolor="background.main">
                             <a href="#proj">
                                 <SubtitleText text={"Projetos"} />
                             </a>
@@ -60,7 +61,7 @@ const HomePage = () => {
                     </div>
                     <Box sx={{ height: "25px" }} />
                     <div data-aos="fade-left" data-aos-duration="1500" data-aos-delay="2500">
-                        <Box sx={{ width: "240px", height: "75px", borderRadius: "15px 0px 0px 15px", justifyContent: "center", alignItems: "center", display: "flex", boxShadow: "0px 7px 9px 0px rgba(0,0,0,0.75)" }} bgcolor="background.main">
+                        <Box sx={{ width: { lg: "240px", xs: "200px" }, height: "75px", borderRadius: { lg: "15px 0px 0px 15px", xs: "5px" }, justifyContent: "center", alignItems: "center", display: "flex", boxShadow: "0px 7px 9px 0px rgba(0,0,0,0.75)" }} bgcolor="background.main">
                             <a href="#exp">
                                 <SubtitleText text={"Experiência"} />
                             </a>
@@ -74,18 +75,22 @@ const HomePage = () => {
             <Box sx={{ width: "60%" }} bgcolor="secondary.main" />
         </Box>
         <Box sx={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", width: "100%" }}>
-            <Box sx={{ width: "1000px" }}>
+            <Box width="100%">
                 <div id="exp">
                     <ExperiencePage />
                 </div>
                 <div id="proj">
                     <ProjectsPage />
                 </div>
+                <div id="contact">
+                    <ContactPage/>
+                </div>
+
             </Box>
-            <div id="about">
-                <FooterPage />
-            </div>
         </Box>
+        <div id="about">
+            <FooterPage />
+        </div>
     </>
 }
 
