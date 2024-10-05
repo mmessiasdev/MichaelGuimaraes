@@ -23,13 +23,13 @@ const HomePage = () => {
     window.addEventListener('scroll', changeBackground);
 
     return <>
-        <Box sx={{ display: "flex", height: "100vh", width: "100%" }}>
+        <Box sx={{ display: "flex", height: "100vh", width: "100%", overflowY: "hidden" }}>
             <Box sx={{ position: "fixed", zIndex: "10", opacity: "100%" }} className={navBar ? 'menuActive' : 'menu'}>
                 <Header />
             </Box>
 
-            <Box sx={{ position: "absolute", height: "100vh", display: "flex", alignItems: "center", justifyContent: { lg: "space-between", xs: "start" }, width: "100%", flexDirection: { md: "row", xs: "column" } }}>
-                <Box sx={{ height: { lg: "100vh", xs: "min-height" }, display: "flex", justifyContent: "center", alignItems: "start", flexDirection: "column", padding: { md: "75px", xs: "15px" }, width: { md: "70%", xs: "100%" } }}>
+            <Box sx={{ position: "absolute", height: "100vh", display: "flex", alignItems: "center", justifyContent: { lg: "space-between", xs: "center" }, width: "100%", flexDirection: { md: "row", xs: "column" } }}>
+                <Box sx={{ height: { lg: "100vh", xs: "min-height" }, display: "flex", justifyContent: "center", alignItems: { lg: "start", xs: "center" }, flexDirection: "column", padding: { md: "75px", xs: "15px" }, width: { md: "70%", xs: "100%" } }}>
                     <div data-aos="fade-right" data-aos-duration="1000">
                         <DefaultTitle title="Michael Guimarães" subtitle="Técnico de Rede e NOC" />
                     </div>
@@ -74,15 +74,15 @@ const HomePage = () => {
             <Box sx={{ width: "40%" }} />
             <Box sx={{ width: "60%" }} bgcolor="secondary.main" />
         </Box>
-        <Box sx={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", width: "100%" }}>
+        <Box sx={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", overflowX: "hidden"}}>
             <Box width="100%">
-                <div id="exp">
+                <div id="exp" data-aos="fade-up" data-aos-delay="500">
                     <ExperiencePage />
                 </div>
-                <div id="proj">
+                <div id="proj" data-aos="fade-up" data-aos-delay="500">
                     <ProjectsPage />
                 </div>
-                <div id="contact">
+                <div id="contact" data-aos="fade-left">
                     <ContactPage/>
                 </div>
 

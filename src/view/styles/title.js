@@ -16,10 +16,10 @@ export const SubtitleText = ({ text }) => {
     );
 };
 
-export const SubText = ({ text }) => {
+export const SubText = ({ text, textAlign }) => {
     return (
         <Box>
-            <Typography variant="h3">{text}</Typography>
+            <Typography textAlign={textAlign} variant="h3">{text}</Typography>
         </Box>
     );
 };

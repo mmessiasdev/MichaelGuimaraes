@@ -5,13 +5,13 @@
 }
 
 .menuActive {
-  animation: moveRight .5s ease-in-out;
+  animation: moveTop .2s ease-in-out;
   transition: all 1s;
 }
 
 
 /* Definindo os @keyframes */
-@keyframes moveRight {
+@keyframes moveTop {
   0% {
     opacity: 0%;
   }
