@@ -1,7 +1,5 @@
 import { Box, Typography, Button } from "@mui/material";
-import { FaWhatsapp } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import DefaultTitle from "../../component/title";
 import { Document, Page } from 'react-pdf/dist/esm/entry.webpack';
 import styled from "styled-components";
 import pdf1 from '../../assets/5gb.pdf';
@@ -14,7 +12,6 @@ import pdf7 from '../../assets/fast Giga.pdf';
 import pdf8 from '../../assets/inteligencia emocional.pdf';
 import pdf9 from '../../assets/iredesb.pdf';
 import pdf10 from '../../assets/RxxxI.pdf';
-import { useState } from "react";
 
 // Melhorando o estilo dos PDFs
 const PDFDocumentWrapper = styled.div`
@@ -44,6 +41,7 @@ const StyledButton = styled(Button)`
 `;
 
 export const CerfiticatesCont = () => {
+
     return (
         <Box
             sx={{
@@ -79,9 +77,14 @@ export const CerfiticatesCont = () => {
                         Certificados
                     </Typography>
                     <Box sx={{ paddingBlock: "25px" }}>
-                        <StyledButton component={Link} to="/certificates">
-                            Acessar certificados
-                        </StyledButton>
+                        <Link to={"/certificates"}>
+                            <Box sx={{ bgcolor: "primary.main", padding: "15px", borderRadius: "10px", color: "white" }}>
+                                <Typography variant="h2">
+                                    Acessar Certificados
+                                </Typography>
+
+                            </Box>
+                        </Link>
                     </Box>
                 </Box>
                 <Box
@@ -101,16 +104,16 @@ export const CerfiticatesCont = () => {
 
 // Array contendo PDFs e seus títulos
 const pdfs = [
-    { file: pdf1, title: 'Título do PDF 1' },
-    { file: pdf2, title: 'Título do PDF 2' },
-    { file: pdf3, title: 'Título do PDF 3' },
-    { file: pdf4, title: 'Título do PDF 4' },
-    { file: pdf5, title: 'Título do PDF 5' },
-    { file: pdf6, title: 'Título do PDF 6' },
-    { file: pdf7, title: 'Título do PDF 7' },
-    { file: pdf8, title: 'Título do PDF 8' },
-    { file: pdf9, title: 'Título do PDF 9' },
-    { file: pdf10, title: 'Título do PDF 10' },
+    { file: pdf1, title: 'Introdução ao 5G' },
+    { file: pdf2, title: 'Redes TCP/IP' },
+    { file: pdf3, title: 'Redes TCP/IP - Intermediário' },
+    { file: pdf4, title: 'Fibra Optica Ponto a Ponto' },
+    { file: pdf5, title: 'Portfolio do CPE para rede Opticas' },
+    { file: pdf6, title: 'Certificações: Redes EPON' },
+    { file: pdf7, title: 'Tecnologias Fast e Giga' },
+    { file: pdf8, title: 'Inteligencia Emocional' },
+    { file: pdf9, title: 'Redes de computadores' },
+    { file: pdf10, title: 'Roteadores Empresariais' },
 ];
 
 export const CerfiticatesPage = () => {
@@ -162,7 +165,8 @@ export const CerfiticatesPage = () => {
                         <Box sx={{ marginLeft: { lg: "20px", xs: "0" }, textAlign: { xs: "center", lg: "left" } }}>
                             <Typography variant="h6" sx={{ fontWeight: "bold" }}>{pdfItem.title}</Typography>
                             <StyledButton onClick={() => handleOpenPDF(pdfItem.file)}>
-                                Acessar certificado
+                                <Typography variant="h2">Acessar certificado</Typography>
+
                             </StyledButton>
                         </Box>
                     </Box>
